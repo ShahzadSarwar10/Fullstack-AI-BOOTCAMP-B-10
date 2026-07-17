@@ -13,7 +13,7 @@ Another scenario is that you have an hour-score dataset which contains letter-ba
 Based on the modality (form) of your data - to figure out what score you'd get based on your study time - you'll perform regression or classification.
 
 Regression is performed on continuous data, while classification is performed on discrete data. Regression can be anything from predicting someone's age, the house of a price, or value of any variable. Classification includes predicting what class something belongs to (such as whether a tumor is benign or malignant)."""
-
+import pickle
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -168,3 +168,7 @@ print(f'Mean absolute error: {mae:.2f}')
 print(f'Mean squared error: {mse:.2f}')
 print(f'Root mean squared error: {rmse:.2f}')
 print(f'R2 Score: {r2:.2f}')
+
+# Save the trained model
+with open("predictive_maintenance_model.pkl", "wb") as f:
+    pickle.dump(regressor, f)
